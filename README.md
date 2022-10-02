@@ -5,11 +5,11 @@ Dentro del repositorio del proyecto debe contener un archivo "README.md" donde s
 - Doriham Russo
 - Enrique Sanchez
 ## Requerimientos de instalación.
--JDK 18
+- JDK 18
 ## Cómo crear la estructura de Base de datos.
--TODO: Base de datos
+- TODO: Base de datos
 ## Cómo poblar los datos iniciales necesarios de Base de datos.
--TODO: agregar mas datos iniciales
+- TODO: agregar mas datos iniciales
 ## Cómo compilar y ejecutar los componentes de cada servidor.
 
 ## Cómo compilar y ejecutar el/los clientes.
