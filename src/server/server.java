@@ -1,6 +1,10 @@
 package server;
+import java.util.Date;  
 import java.net.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.io.*;
 import org.json.*;
 
@@ -11,6 +15,7 @@ public class server
     BufferedReader in           = null;
     BufferedWriter out          = null;
     ArrayList<JSONObject> data  = new ArrayList<>();
+    ArrayList<String> log = new ArrayList<>();
     public void StartServer(int port) throws IOException 
     {
         try
@@ -20,10 +25,14 @@ public class server
             communicationSocket = serverSocket.accept();
             in                  = new BufferedReader(new InputStreamReader(communicationSocket.getInputStream(),"UTF-8"));
             out                 = new BufferedWriter(new OutputStreamWriter(communicationSocket.getOutputStream(),"UTF-8"));
-            String inputLine, outputLine = "";
-
+            String inputLine;
+            String outputLine;
+            Date date;
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
             while ((inputLine = in.readLine())!= null) 
             {
+                date = Calendar.getInstance().getTime();
+                outputLine = dateFormat.format(date) + ":Port:"+ Integer.toString(port) + ":";
             	System.out.println(inputLine);
                 JSONObject object = new JSONObject(inputLine);
                 
@@ -61,6 +70,7 @@ public class server
                 	outputLine = "{\"Orden de conexion\": \"1\"}";
                 }
                 out.write(outputLine);
+                log.add(outputLine);
             }
             out.close();
             in.close();
