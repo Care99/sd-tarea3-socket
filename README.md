@@ -1,9 +1,9 @@
 # sd-tarea3-socket
 Dentro del repositorio del proyecto debe contener un archivo "README.md" donde se especifique:
 ## Los nombres de los alumnos que realizaron el trabajo.
--Cesar Rodas
--Doriham Russo
--Enrique Sanchez
+- Cesar Rodas
+- Doriham Russo
+- Enrique Sanchez
 ## Requerimientos de instalación.
 -JDK 18
 ## Cómo crear la estructura de Base de datos.
